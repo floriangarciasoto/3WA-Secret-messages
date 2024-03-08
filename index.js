@@ -45,8 +45,7 @@ function init() {
 				messages['#' + messageHash] = encodedMessage;
 				saveMessages(messages);
 
-				messageLink.setAttribute('href','#' + messageHash);
-				messageLink.innerHTML = window.location.origin + '#' + messageHash;
+				messageLink.value = window.location.origin + '#' + messageHash;
 				hideElement(messageForm);
 				showElement(messageLinkDv);
 			} catch (err) {
@@ -54,14 +53,8 @@ function init() {
 			}
 		});
 
-		messageLink.addEventListener('click',function(e){
-			e.preventDefault();
-			window.location.href += "#" + messageHash;
-			window.location.reload();
-		});
-
 		messageCopy.addEventListener('click',function(){
-			copyToClipboard(messageLink.innerHTML);
+			copyToClipboard(messageLink.value);
 			showElement(messageLinkCopiedInform);
 		});
 	
