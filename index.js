@@ -1,6 +1,6 @@
 import { encodeData, decodeData } from "./lib/API/crypto";
 import { getMessages, saveMessages } from "./lib/storage/localStorage";
-import { copyToClipboard } from "./lib/DOM/dom";
+import { hideElement, showElement, copyToClipboard } from "./lib/DOM/dom";
 import getURLHash from "./lib/API/fetchHash";
 
 const createMessageSection = document.getElementById('create-message-section');
@@ -23,7 +23,7 @@ function init() {
 
 		if (messages[window.location.hash])	secretMessage.innerHTML = decodeData(messages[window.location.hash]);
 		else secretMessage.innerHTML = 'Not secret message found for this URL.';
-		secretMessageDv.classList.remove('hidden');
+		showElement(secretMessageDv);
 
 	} else {
 
@@ -47,8 +47,8 @@ function init() {
 
 				messageLink.setAttribute('href','#' + messageHash);
 				messageLink.innerHTML = window.location.origin + '#' + messageHash;
-				messageForm.classList.add('hidden');
-				messageLinkDv.classList.remove('hidden');
+				hideElement(messageForm);
+				showElement(messageLinkDv);
 			} catch (err) {
 				console.log(err.message);
 			}
@@ -62,10 +62,10 @@ function init() {
 
 		messageCopy.addEventListener('click',function(){
 			copyToClipboard(messageLink.innerHTML);
-			messageLinkCopiedInform.classList.remove('hidden');
+			showElement(messageLinkCopiedInform);
 		});
 	
-		createMessageSection.classList.remove('hidden');
+		showElement(createMessageSection);
 	
 	}
 }
