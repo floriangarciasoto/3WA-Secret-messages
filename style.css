@@ -1,0 +1,33 @@
+:root {
+	color-scheme: dark;
+}
+
+.hidden {
+	display: none;
+}
+
+a {
+	text-decoration: none;
+	color: initial;
+}
+
+#message-link-dv {
+	display: flex;
+	align-items: center;
+}
+#message-link-dv.hidden {
+	display: none;
+}
+
+#message-link {
+	font-weight: bold;
+}
+
+#message-copy {
+	height: 1em;
+	background-color: white;
+	padding: 0.5em;
+	border-radius: 0.25em;
+	cursor: pointer;
+	margin: 0.5em;
+}

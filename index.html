@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Secret messages</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<fieldset id="create-message-section" class="hidden">
+		<legend>Create a secret message</legend>
+		<form id="message-form">
+			<div>Message : <input type="text" id="message-input" name="message"> <button id="message-submit" disabled>Get a link</button></div>
+		</form>
+		<div id="message-link-dv" class="hidden">
+			Here is your link : <a id="message-link"></a> <img id="message-copy" src="copy-icon.svg" alt="Copy the link in your clipboard">
+		</div>
+		<div id="message-link-copied-inform" class="hidden">Link is now in your clipboard !</div>
+	</fieldset>
+	<div id="secret-message-dv" class="hidden">
+		<p id="secret-message"></p>
+		<a href=".">Create your own message</a>
+	</div>
+	<script type="module" src="index.js"></script>
+</body>
+</html>
