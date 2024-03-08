@@ -45,7 +45,7 @@ function init() {
 				messages['#' + messageHash] = encodedMessage;
 				saveMessages(messages);
 
-				messageLink.value = window.location.origin + '#' + messageHash;
+				messageLink.value = window.location.href + '#' + messageHash;
 				hideElement(messageForm);
 				showElement(messageLinkDv);
 			} catch (err) {
